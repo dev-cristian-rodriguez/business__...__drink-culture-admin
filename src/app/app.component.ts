@@ -43,7 +43,7 @@ class HEROES {
   standalone: true,
   imports: [HomeModule],
   template: `
-    <h2> controls heroes </h2>
+    <h2 class="master-name"> controls heroes </h2>
 
     <profile-photo [master]="firstProperty" [secondProperty]="secondProperty" />
   `,
