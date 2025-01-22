@@ -1,12 +1,9 @@
 import { Component, NgModule } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from "@angular/common";
 
-// Components
-import { HomeComponent } from "../../src/app/home/home.component"
-
 // NgModule
-import { HomeModule } from "./home/export-component";
+import { HomeModule } from "./home/home.component";
 
 interface Person {
   name: string;
@@ -41,13 +38,13 @@ class HEROES {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeModule],
+  imports: [HomeModule, CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   template: `
     <h2 class="master-name"> controls heroes </h2>
 
     <profile-photo [master]="firstProperty" [secondProperty]="secondProperty" />
   `,
-  // templateUrl: './app.component.html',
+  templateUrl: './app.component.html',
   // styleUrl: './app.component.css',
 
   // template: `<button [disabled]="hasPendingChanges">ffff</button>`,

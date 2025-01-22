@@ -1,7 +1,4 @@
-<style>
-</style>
-
-<main class="main" style="border:2px solid brown">
+<main class="main" style="border: 2px solid brown">
   <!-- <h1>{{ title }}</h1>
 
   <button
@@ -30,7 +27,31 @@
     I am Cristian {{ item.name }} and i have {{ item.age || "'No age'" }}</span
   > -->
 
-  <h1> Testing </h1>
+  <!-- <h1>Testing</h1> -->
+
+  <h1>Angular Router App</h1>
+  <nav>
+    <ul>
+      <li>
+        <a
+          style="cursor: pointer"
+          routerLink="/home-component"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >First Component</a
+        >
+      </li>
+      <li>
+        <a
+          style="cursor: pointer"
+          routerLink="/login-component"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Second Component</a
+        >
+      </li>
+    </ul>
+  </nav>
 </main>
 
-<router-outlet />
+<router-outlet></router-outlet>
