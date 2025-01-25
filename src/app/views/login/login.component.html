@@ -1,1 +1,61 @@
-<p>login works!</p>
+<main class="main-container">
+  <section class="img-container">
+    <img
+      src="https://startupeable.com/directorio/wp-content/uploads/2021/03/MercadoLibre_-_Wikipedia.png"
+      alt="Logo"
+    />
+  </section>
+
+  <section class="login-container">
+    <aside class="login-box">
+      <h1>Panel de administrador</h1>
+
+      <div
+        style="
+          background: #4f4ffb;
+          height: 3px;
+          width: 100%;
+          margin-bottom: 17px;
+        "
+      ></div>
+
+      <form (submit)="submitEvent($event)">
+        <label for="email"> Correo electronico</label>
+        <input
+          class="input-text"
+          type="email"
+          id="email"
+          [value]="this.email"
+          [formControl]="this.email"
+          required
+        />
+
+        <label for="password"> Contraseña </label>
+        <input
+          class="input-password"
+          id="password"
+          type="password"
+          [value]="this.password"
+          [formControl]="this.password"
+          required
+        />
+
+        <br />
+
+        <button type="submit">
+          <span *ngIf="!loading"> Ingresar </span>
+          <span *ngIf="loading"> Cargando... </span>
+        </button>
+      </form>
+
+      <!-- Additional message -->
+      <p
+        [ngStyle]="{ color: status === 'success' ? 'green' : 'red' }"
+        *ngIf="additionalMessage"
+        class="additional-messages"
+      >
+        {{ additionalMessage }}
+      </p>
+    </aside>
+  </section>
+</main>
