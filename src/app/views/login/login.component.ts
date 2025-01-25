@@ -1,5 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 
+// Injection is to separate logic from the view
+
 @Component({
   selector: 'app-login',
   // standalone: true,

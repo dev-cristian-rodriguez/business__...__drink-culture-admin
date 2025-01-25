@@ -21,11 +21,11 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/assets/icons/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/index.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -85,11 +85,11 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
+              "src/assets/icons/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/index.css"
             ],
             "scripts": []
           }
