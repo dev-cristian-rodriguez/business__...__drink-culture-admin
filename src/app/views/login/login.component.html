@@ -42,10 +42,18 @@
 
         <br />
 
-        <button type="submit">
-          <span *ngIf="!loading"> Ingresar </span>
-          <span *ngIf="loading"> Cargando... </span>
-        </button>
+        <aside [ngSwitch]="this.loading">
+          <button type="submit" *ngSwitchCase="false">
+            <span *ngIf="!loading"> Ingresar </span>
+          </button>
+
+          <div
+            style="display: flex; justify-content: center; align-items: center"
+            *ngSwitchDefault
+          >
+            <app-loader-component-2 />
+          </div>
+        </aside>
       </form>
 
       <!-- Additional message -->

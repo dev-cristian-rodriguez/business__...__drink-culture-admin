@@ -75,6 +75,7 @@
 
 .login-box form button[type="submit"] {
   cursor: pointer;
+  width: 100%;
   background-color: #4f4ffb;
   color: white;
   font-size: 14px;

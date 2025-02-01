@@ -1,0 +1,63 @@
+.admin-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #417690;
+}
+
+.admin-panel__title {
+  color: #e4CB6B;
+  margin: 0px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.admin-panel__content {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-panel__content p {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.admin-panel__view-site {
+  color: #e4CB6B !important;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.admin-panel__logout {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: transform 0.3s;
+}
+
+.admin-panel__logout:hover {
+  transform: scale(1.1);
+}
+
+
+.breadcrumb {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 30px;
+  color: white;
+  background: #79aec8;
+}
+
+.breadcrumb__item {
+  margin: 0px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.breadcrumb__separator {
+  font-weight: bold;
+}

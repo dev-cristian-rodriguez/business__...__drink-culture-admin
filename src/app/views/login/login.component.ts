@@ -5,10 +5,13 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 // Injection is to separate logic from the view
 
+// Components
+import { LoadersComponentModule } from '../../components/common/loaders/loaders.component';
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [LoadersComponentModule, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
