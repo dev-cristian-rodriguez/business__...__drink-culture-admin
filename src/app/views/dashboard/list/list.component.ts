@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, afterNextRender } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from "@angular/common";
 
@@ -10,11 +10,15 @@ import { CommonModule } from "@angular/common";
   styleUrl : './list.component.css',
 })
 
-export class ListComponent {
-  constructor(private router: Router) {
-    // If Token does not exist, redirect to login
-    if (!window.localStorage.getItem("token")) {
-      this.router.navigate(['/login']);
-    }
+export class ListComponent  {
+  // Variables
+
+  constructor (private router: Router) {
+    afterNextRender(() => {
+      // If Token does not exist, redirect to login
+      if (!window.localStorage.getItem("token")) {
+        this.router.navigate(['/login']);
+      }
+    });
   }
 }

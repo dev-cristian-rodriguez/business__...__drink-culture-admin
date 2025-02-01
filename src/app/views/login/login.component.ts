@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, afterNextRender } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { Router } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -15,25 +15,20 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 
 export class LoginComponent {
-  email: FormControl;
-  password: FormControl;
-
-  loading: boolean;
-  additionalMessage: string;
-  status: string;
+  // Variables
+  email: FormControl = new FormControl('');
+  password: FormControl = new FormControl('');
+  loading: boolean = false;
+  additionalMessage: string = '';
+  status: string = '';
 
   constructor(private router: Router) {
-    // If Token exists, redirect to dashboard
-    if (window.localStorage.getItem("token")) {
-      this.router.navigate(['/dashboard/list']);
-    }
-
-    this.email = new FormControl('');
-    this.password = new FormControl('');
-
-    this.loading = false;
-    this.additionalMessage = '';
-    this.status = '';
+    afterNextRender(() => {
+      // If Token does not exist, redirect to login
+      if (window.localStorage.getItem("token")) {
+        this.router.navigate(['/dashboard/list']);
+      }
+    });
   }
 
   async submitEvent(event: Event): Promise<void> {
@@ -58,21 +53,13 @@ export class LoginComponent {
     }
 
     this.loading = true;
+    this.additionalMessage = "Login successful";
+    this.status = 'success';
 
-    window.localStorage.setItem("token", "1234567890");
-    this.router.navigate(['/dashboard/list'])
-
-
-    // setTimeout(() => {
-    //   window.localStorage.setItem("token", "1234567890");
-    //   this.additionalMessage = "Login successful";
-    //   this.status = 'success';
-    // }, 4000);
-
-    // setTimeout(() => {
-    //   this.loading = false;
-    //   this.router.navigate(['/dashboard/list'])
-    // }, 2000);
+    setTimeout(() => {
+      window.localStorage.setItem("token", "1234567890");
+      this.router.navigate(['/dashboard/list'])
+    }, 4000);
   }
 
 }

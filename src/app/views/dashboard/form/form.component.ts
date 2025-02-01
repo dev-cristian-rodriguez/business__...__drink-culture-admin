@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, afterNextRender } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from "@angular/common";
 
 @Component({
@@ -10,15 +10,22 @@ import { CommonModule } from "@angular/common";
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-  title: string
+  // Variables
+  title: string = this.router.url === '/dashboard/form/create' ? 'Create' : 'Update';
+  id : string = this.activatedRoute.snapshot.params['id'];
 
-  constructor(private router: Router) {
-    // If Token does not exist, redirect to login
-    if (!window.localStorage.getItem("token")) {
-      console.log('Token does not exist');
-      this.router.navigate(['/login']);
-    }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    console.log(this.activatedRoute.snapshot.params['id']);
 
-    this.title = window.location.pathname === '/dashboard/form/create' ? 'Create' : 'Update';
+    afterNextRender(() => {
+      // If Token does not exist, redirect to login
+      if (!window.localStorage.getItem("token")) {
+        this.router.navigate(['/login']);
+      }
+    });
+  }
+
+  f () {
+    this.activatedRoute
   }
 }

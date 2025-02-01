@@ -51,7 +51,7 @@ export const routes: Routes = [
             title: 'Form - Create'
           },
           {
-            path: 'update',
+            path: 'update/:id',
             pathMatch: 'prefix',
             component: FormComponent,
             title: 'Form - update'
@@ -59,7 +59,7 @@ export const routes: Routes = [
         ]
       },
       {
-        path: 'detail',
+        path: 'detail/:id',
         pathMatch: 'prefix',
         component: DetailComponent,
         title: 'Detail'
