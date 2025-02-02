@@ -29,7 +29,7 @@ export class LoginComponent {
     afterNextRender(() => {
       // If Token does not exist, redirect to login
       if (window.localStorage.getItem("token")) {
-        this.router.navigate(['/dashboard/list']);
+        this.router.navigate(['/dashboard/overview']);
       }
     });
   }
