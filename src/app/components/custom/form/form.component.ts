@@ -1,14 +1,15 @@
-import { Component, afterNextRender } from '@angular/core';
+import { Component, afterNextRender, NgModule } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from "@angular/common";
 
 @Component({
   selector: 'app-form',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
+  // imports: [CommonModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
+
 export class FormComponent {
   // Variables
   title: string = this.router.url === '/dashboard/form/create' ? 'Create' : 'Update';
@@ -28,4 +29,14 @@ export class FormComponent {
   f () {
     this.activatedRoute
   }
+}
+
+@NgModule({
+  declarations : [ FormComponent ],
+  imports : [ CommonModule ],
+  exports : [ FormComponent ]
+})
+
+export class FormComponentModule {
+
 }

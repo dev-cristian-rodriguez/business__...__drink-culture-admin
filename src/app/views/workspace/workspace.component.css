@@ -1,0 +1,18 @@
+.work-space-container {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 25px;
+  gap: 40px;
+}
+
+.collections-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 22%;
+}
+
+.initial-container {
+  width: 78%;
+}

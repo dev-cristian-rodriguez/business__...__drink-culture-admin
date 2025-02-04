@@ -1,10 +1,19 @@
 <main>
   <app-navbar></app-navbar>
 
-  <main style="padding: 15px 20px;">
-    <app-collection></app-collection>
-  </main>
+  <section class="work-space-container">
+    <aside class="collections-container">
+      <app-collection></app-collection>
+      <app-collection></app-collection>
+      <app-collection></app-collection>
+    </aside>
 
-  <p>workspace works!</p>
-  {{ currentLocation }}
+    <aside class="initial-container">
+      <h1 *ngIf="currentLocation.startsWith('/dashboard/overview')"> Overview</h1>
+      <app-form *ngIf="currentLocation.startsWith('/dashboard/form/create') || currentLocation.startsWith('/dashboard/form/update')" />
+      <app-table *ngIf="currentLocation.startsWith('/dashboard/table')"/>
+      <app-detail *ngIf="currentLocation.startsWith('/dashboard/detail')"/>
+      <app-preview *ngIf="currentLocation.startsWith('/dashboard/preview')"/>
+    </aside>
+  </section>
 </main>

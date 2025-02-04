@@ -72,7 +72,14 @@ export const routes: Routes = [
         pathMatch: 'prefix',
         component: WorkspaceComponent,
         title: 'Detail'
-      }
+      },
+
+      {
+        path: 'preview/:id',
+        pathMatch: 'prefix',
+        component: WorkspaceComponent,
+        title: 'Preview'
+      },
     ]
   },
 

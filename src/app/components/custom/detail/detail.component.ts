@@ -1,11 +1,11 @@
-import { Component, afterNextRender } from '@angular/core';
+import { Component, afterNextRender, NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
+  // imports: [CommonModule],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css'
 })
@@ -21,4 +21,15 @@ export class DetailComponent {
       }
     });
   }
+}
+
+
+@NgModule({
+  declarations: [DetailComponent],
+  imports: [CommonModule],
+  exports: [DetailComponent]
+})
+
+export class DetailComponentModule {
+
 }
