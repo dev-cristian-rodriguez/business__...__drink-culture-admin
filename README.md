@@ -5,4 +5,4 @@ This is an e-commerce platform for selling alcoholic beverages. Here is the admi
 ## Technologies 💻
 
 * TypeScript
-* Angular 
+* Angular 19
