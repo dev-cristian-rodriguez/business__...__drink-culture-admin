@@ -1,19 +1,42 @@
 <main>
+  <nav>
+    <ul>
+      <li><a routerLink="/dashboard/overview" routerLinkActive="active" ariaCurrentWhenActive="page">Overview</a></li>
+      <li><a routerLink="/dashboard/form/create" routerLinkActive="active" ariaCurrentWhenActive="page">Create</a></li>
+      <li><a routerLink="/dashboard/form/update/5" routerLinkActive="active" ariaCurrentWhenActive="page">Update</a></li>
+      <li><a routerLink="/dashboard/table/5" routerLinkActive="active" ariaCurrentWhenActive="page">Table</a></li>
+      <li><a routerLink="/dashboard/detail/4" routerLinkActive="active" ariaCurrentWhenActive="page">Detail</a></li>
+      <li><a routerLink="/dashboard/preview/4" routerLinkActive="active" ariaCurrentWhenActive="page">Preview</a></li>
+    </ul>
+  </nav>
+
+  <!-- Navbar -->
   <app-navbar></app-navbar>
 
-  <section class="work-space-container">
-    <aside class="collections-container">
-      <app-collection></app-collection>
-      <app-collection></app-collection>
-      <app-collection></app-collection>
-    </aside>
+  <!-- Main content -->
+  <main>
+    <section class="work-space-container">
+      <aside class="collections-container">
+        <app-collection></app-collection>
+        <app-collection></app-collection>
+        <app-collection></app-collection>
+      </aside>
 
-    <aside class="initial-container">
-      <h1 *ngIf="currentLocation.startsWith('/dashboard/overview')"> Overview</h1>
-      <app-form *ngIf="currentLocation.startsWith('/dashboard/form/create') || currentLocation.startsWith('/dashboard/form/update')" />
-      <app-table *ngIf="currentLocation.startsWith('/dashboard/table')"/>
-      <app-detail *ngIf="currentLocation.startsWith('/dashboard/detail')"/>
-      <app-preview *ngIf="currentLocation.startsWith('/dashboard/preview')"/>
-    </aside>
-  </section>
+      <aside class="initial-container">
+        <h1 *ngIf="currentLocation.startsWith('/dashboard/overview')">
+          Overview
+        </h1>
+
+        <app-form
+          *ngIf="
+            currentLocation.startsWith('/dashboard/form/create') ||
+            currentLocation.startsWith('/dashboard/form/update')
+          "
+        />
+        <app-table *ngIf="currentLocation.startsWith('/dashboard/table')" />
+        <app-detail *ngIf="currentLocation.startsWith('/dashboard/detail')" />
+        <app-preview *ngIf="currentLocation.startsWith('/dashboard/preview')" />
+      </aside>
+    </section>
+  </main>
 </main>

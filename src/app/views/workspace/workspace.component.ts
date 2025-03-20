@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, afterNextRender } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 
 // Components
 import { NavbarComponentModule } from '../../components/layout/navbar/navbar.component';
@@ -13,7 +13,11 @@ import { PreviewComponentModule } from '../../components/custom/preview/preview.
 @Component({
   selector: 'app-workspace',
   standalone: true,
-  imports: [CommonModule, NavbarComponentModule, CollectionComponentModule, FormComponentModule, TableComponentModule, DetailComponentModule, PreviewComponentModule],
+  imports: [CommonModule, NavbarComponentModule,
+    RouterLink, RouterLinkActive,
+    CollectionComponentModule, FormComponentModule,
+    TableComponentModule, DetailComponentModule,
+    PreviewComponentModule],
   templateUrl: './workspace.component.html',
   styleUrl: './workspace.component.css'
 })
