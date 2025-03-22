@@ -5,8 +5,8 @@ import { Router, ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/r
 // Components
 import { NavbarComponentModule } from '../../components/layout/navbar/navbar.component';
 import { CollectionComponentModule } from '../../components/custom/collection/collection.component';
-import { FormComponentModule } from "../../components/custom/form/form.component"
-import { TableComponentModule } from '../../components/custom/table/table.component';
+import { FormComponentModule } from "../../components/custom/form/form.component";
+import { TableComponent } from '../../components/custom/table/table.component';
 import { DetailComponentModule } from '../../components/custom/detail/detail.component';
 import { PreviewComponentModule } from '../../components/custom/preview/preview.component';
 
@@ -16,7 +16,7 @@ import { PreviewComponentModule } from '../../components/custom/preview/preview.
   imports: [CommonModule, NavbarComponentModule,
     RouterLink, RouterLinkActive,
     CollectionComponentModule, FormComponentModule,
-    TableComponentModule, DetailComponentModule,
+    TableComponent, DetailComponentModule,
     PreviewComponentModule],
   templateUrl: './workspace.component.html',
   styleUrl: './workspace.component.css'

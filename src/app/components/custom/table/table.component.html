@@ -1,1 +1,52 @@
-<p>table works!</p>
+<main>
+  <aside class="header-container">
+    <h1 class="table-title">Select ticket to change</h1>
+    <button class="add-ticket-button"> Add Ticket </button>
+  </aside>
+
+  <aside class="action-container">
+    <p>Action:</p>
+
+    <select class="action-container__select">
+      <option [defaultSelected]="true">---------------</option>
+      <option value="update">Update</option>
+      <option value="delete">Delete</option>
+    </select>
+
+    <button class="action-container__button">Go</button>
+
+    <p>4 of 100 selected</p>
+  </aside>
+
+  <aside class="search-table-outter">
+    <table class="search-table">
+      <thead class="search-table__header">
+        <tr>
+          <!-- <th><input type="checkbox" /></th> -->
+          <th>Name</th>
+          <th>Age</th>
+          <th>Requester</th>
+          <th>Assignee</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Created</th>
+          <th>Updated</th>
+        </tr>
+      </thead>
+
+      <tbody class="search-table__body">
+        <tr *ngFor="let item of this.people">
+          <!-- <td><input type="checkbox" /></td> -->
+          <td>{{ item.name }}</td>
+          <td>{{ item.age }}</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+        </tr>
+      </tbody>
+    </table>
+  </aside>
+</main>
