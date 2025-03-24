@@ -16,7 +16,7 @@ export class FormComponent {
   id : string = this.activatedRoute.snapshot.params['id'];
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
-    console.log(this.activatedRoute.snapshot.params['id']);
+    // console.log(this.activatedRoute.snapshot.params['id']);
 
     afterNextRender(() => {
       // If Token does not exist, redirect to login

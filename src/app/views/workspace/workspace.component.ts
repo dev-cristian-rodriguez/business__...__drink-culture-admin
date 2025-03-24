@@ -34,7 +34,7 @@ export class WorkspaceComponent {
         this.router.navigate(['/login']);
       }
 
-      console.log(this.currentLocation);
+      // console.log(this.currentLocation);
     });
   }
 
