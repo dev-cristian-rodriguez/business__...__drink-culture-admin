@@ -1,12 +1,54 @@
 <main>
   <nav>
     <ul>
-      <li><a routerLink="/dashboard/overview" routerLinkActive="active" ariaCurrentWhenActive="page">Overview</a></li>
-      <li><a routerLink="/dashboard/form/create" routerLinkActive="active" ariaCurrentWhenActive="page">Create</a></li>
-      <li><a routerLink="/dashboard/form/update/5" routerLinkActive="active" ariaCurrentWhenActive="page">Update</a></li>
-      <li><a routerLink="/dashboard/table/5" routerLinkActive="active" ariaCurrentWhenActive="page">Table</a></li>
-      <li><a routerLink="/dashboard/detail/4" routerLinkActive="active" ariaCurrentWhenActive="page">Detail</a></li>
-      <li><a routerLink="/dashboard/preview/4" routerLinkActive="active" ariaCurrentWhenActive="page">Preview</a></li>
+      <li>
+        <a
+          routerLink="/dashboard/overview"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Overview</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/dashboard/form/create"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Create</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/dashboard/form/update/5"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Update</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/dashboard/table/5"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Table</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/dashboard/detail/4"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Detail</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/dashboard/preview/4"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Preview</a
+        >
+      </li>
     </ul>
   </nav>
 
@@ -23,9 +65,13 @@
       </aside>
 
       <aside class="initial-container">
-        <h1 *ngIf="currentLocation.startsWith('/dashboard/overview')">
-          Overview
-        </h1>
+        <div class="overview-container" *ngIf="currentLocation.startsWith('/dashboard/overview')">
+          <h1>Dashboard</h1>
+          <h4>Welcome</h4>
+          <p>Choose a section to start</p>
+
+          <img src="https://cdn-icons-png.flaticon.com/512/5580/5580956.png"/>
+        </div>
 
         <app-form
           *ngIf="

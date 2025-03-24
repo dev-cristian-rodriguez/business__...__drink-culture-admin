@@ -16,3 +16,33 @@
 .initial-container {
   width: 78%;
 }
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview-container h1 {
+  margin: 0px;
+  font-size: 37px;
+  color: #1a1a1a;
+}
+
+.overview-container h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.overview-container p {
+  font-size: 13px;
+  color: #1a1a1a;
+}
+
+.overview-container img {
+  width: 100%;
+  max-width: 280px;
+}
